@@ -13,9 +13,8 @@ import spotipy
 import datetime as dt
 import csv
 
-
 # set your credentials as enviroment variables first
-sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+sp = spotipy.Spotify(client_credentials_manager= SpotifyClientCredentials())
 
 csv_file = "playlist_file_name.csv" # name your file here
 playlists = []  # your spotify playlist ids here
@@ -32,7 +31,7 @@ for playlist in playlists:
     while True:
         
         response = sp.playlist_tracks(playlist,
-                                      offset=offset,
+                                      offset= offset,
                                       fields=
                                       'items.track.id,items.track.artists')
         
