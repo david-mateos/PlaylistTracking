@@ -3,7 +3,6 @@
 """
 update the file created in the initialization 
 script. This script should be scheduled to run 24 hours after the first. 
-
 """
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
