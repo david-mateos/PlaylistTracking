@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 update the file created in the initialization 
-script. This script should be scheduled to run 24 hours after the first. 
+script. This script should be scheduled to run every 24 hrs at least
 """
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
