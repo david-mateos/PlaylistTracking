@@ -34,7 +34,8 @@ if __name__ == "__main__":
                                           offset= offset,
                                           fields=
                                           'items.track.id,items.track.artists')
-
+            # remove positions where there is a video. uncomment if your playlists have videos
+            #response['items'] = [s for s in response['items'] if s['track'] != None]
             playlistJSON.extend(response['items'])
 
             offset = offset + len(response['items']) #if there 100+ tracks
