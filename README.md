@@ -3,19 +3,19 @@ Track Spotify Playlists by scheduling scripts that save tracks and positions to 
 at appearances and position changes in R. 
 
 Contents:
-1. Initalization Script (Py)
+1. Initialize File (.py)
    - first batch of data and file creation
    
-2. Update Script (Py)
+2. Update Script (.py)
    - update the main csv file
    
 3. Cron job settings (txt)
 
-4. Useful Analysis Functions (R)
+4. Useful Functions (.R)
    - functions to get track and artists names
    
-5. Analysis (R)
-   - useful general dplyr groupings 
+5. Analysis (.R)
+   - useful general dplyr groupings
 
-6. Visualization (R)
+6. Visualization (.R)
    - Requires at least 3 weeks of data
