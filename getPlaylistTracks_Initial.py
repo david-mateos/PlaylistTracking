@@ -21,8 +21,8 @@ playlists = []  # your spotify playlist ids here
 
 playlistJSON = []
 track_id = []
-artist_id = []
-playlist_id = []
+artist_id = []    # this will be the primary artist
+playlist_id = []  # for tracks with more than 1 artist, call the track
 position = []
 offset = 0
 
