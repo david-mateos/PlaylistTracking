@@ -63,17 +63,17 @@ getPlaylist <- function(playlist_id){
 }
 
 
-# Test Functions with some Spotify Ids
+# Test Functions with some real Spotify IDs
 test_artist_ids <- c("5cj0lLjcoR7YOSnhnX0Po5","1cNDP5yjU5vjeR8qMf4grg")
 test_track_ids <- c("0nbXyq5TXYPCO7pr3N8S4I", "3Dv1eDb0MEgF93GpLXlucZ")
 test_playlist_id <- c("4oLzRc3J5ywu7lEF3sfJ1a")
 
-token <<- getToken()
+token <<- getToken() # get Authorized first
 
 # Get Information on onw Artist
 getArtist(test_artist_ids[1])$name             # name
-unlist(getArtist(test_artist_ids[1])$genres)   # genres
 getArtist(test_artist_ids[1])$followers$total  # followers
+unlist(getArtist(test_artist_ids[1])$genres)   # genres
 
 # Get Information on upto 50 Artists
 getArtists(test_artist_ids)$artists[[2]]$name            # 2nd Artist's name
