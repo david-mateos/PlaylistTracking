@@ -1,6 +1,6 @@
 # PlaylistTracking (In Progress)
 Track Spotify Playlists by scheduling scripts that save tracks and positions to a file. Find key songs and artists that stand out in the noise by looking 
-at appearances and position changes in R. 
+at appearances and position changes over time in R. 
 
 Contents:
 1. Initialize File (.py)
