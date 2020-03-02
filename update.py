@@ -10,6 +10,7 @@ import datetime as dt
 import csv
 import os
 
+os.chdir("/your_dir") 
 sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials()) # make sure credentials are env vars
 playlists = [] # same playlists as initial batch if positions are to be analyzed
 
