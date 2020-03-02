@@ -10,4 +10,4 @@
 # -------------------------------------------------
 # 
 # update tracks csv by running the update script @ noon daily
-0 12 * * * python3 /your_file_path/update.py
+0 12 * * * python /your_file_path/update.py
