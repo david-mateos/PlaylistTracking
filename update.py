@@ -8,11 +8,10 @@ from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
 import datetime as dt
 import csv
+import os
 
-sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
-
-csv_file = "/file_being_updated_here.csv"
-playlists = [] #same playlists as initial batch if positions are to be analyzed
+sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials()) # make sure credentials are env vars
+playlists = [] # same playlists as initial batch if positions are to be analyzed
 
 playlistJSON = []
 track_id = []
@@ -54,6 +53,9 @@ date_checked = [today]*len(position)
 
 master = track_id, artist_id, playlist_id, position, date_checked
 
-with open(csv_file,'a') as my_file:
+file_updating = 'file.csv' # the csv you are updating
+file_path = os.getcwd()+'/'+file_updating
+
+with open(file_path,'a') as my_file:
     wr = csv.writer(my_file, delimiter=',')
     wr.writerows(zip(*master))
