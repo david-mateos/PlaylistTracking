@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-update the file created in the initialization 
-script. This script should be scheduled to run every 24 hrs at least
+Update the file created in the initialization script
+This script should be the one scheduled 
 """
 from spotipy.oauth2 import SpotifyClientCredentials
 import spotipy
@@ -10,8 +10,11 @@ import datetime as dt
 import csv
 import os
 
-os.chdir("/your_dir") 
-sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials()) # make sure credentials are env vars
+os.chdir("/your_dir") # csv being updated should be in this directory
+file_updating = 'my_file.csv' 
+
+# make sure credentials are environment variables first
+sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 playlists = [] # same playlists as initial batch if positions are to be analyzed
 
 playlistJSON = []
@@ -54,9 +57,7 @@ date_checked = [today]*len(position)
 
 master = track_id, artist_id, playlist_id, position, date_checked
 
-file_updating = 'file.csv' # the csv you are updating
 file_path = os.getcwd()+'/'+file_updating
-
 with open(file_path,'a') as my_file:
     wr = csv.writer(my_file, delimiter=',')
     wr.writerows(zip(*master))
