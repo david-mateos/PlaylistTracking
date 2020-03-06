@@ -62,6 +62,25 @@ getPlaylist <- function(playlist_id){
   return(response)
 }
 
+# compare a playlist from one day to a previous day, return tracks that have appeared
+# requires a dataset with different days of playlist data and getToken and getTrack 
+# from above to name the track ids
+newPlaylistTracks <- function(dataset, pl_id, from, to){
+  
+  set2 <- dataset %>%
+    filter(playlist_id== pl_id) %>%
+    filter(date_checked== to) %>%
+    select(track_id)
+  set1 <- dataset %>%
+    filter(playlist_id== pl_id) %>%
+    filter(date_checked== from) %>%
+    select(track_id)
+  setdiff <- setdiff(set2,set1) %>% 
+               rowwise() %>%
+               mutate(track = getTrack(track_id)$name) %>%
+               select(track, track_id)
+  return(setdiff)
+}
 
 # Test Functions with some real Spotify IDs
 test_artist_ids <- c("5cj0lLjcoR7YOSnhnX0Po5","1cNDP5yjU5vjeR8qMf4grg")
